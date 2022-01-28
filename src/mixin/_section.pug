@@ -1,0 +1,11 @@
+include _buttons.pug
+//- include _title.pug
+
+mixin section(name, tt)
+  section.section
+  h3.text-info @include
+  h1= tt
+  code
+  code
+  div(class!=attributes.class)= name
+    + buttons

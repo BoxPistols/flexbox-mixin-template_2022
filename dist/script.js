@@ -1,68 +1,28 @@
-let bxs = document.querySelectorAll(".section .bx");
-for (var i = 0; i < bxs.length; i++) {
-  bxs[i].addEventListener(
-  "click",
-  function () {
-    // this.style.color = "blue";
-    console.log(getComputedStyle(this).justifyContent);
-  },
-  false);
-
+function val(_v) {
+    // まずはターゲットの要素を取得する
+    var getDoc = function (getDom) {
+        return document.querySelector(getDom);
+    };
+    // CSSのスタイルを取得する
+    var styleResults = function (getStyling) {
+        return window.getComputedStyle(getStyling);
+    };
+    var boxStyle = styleResults(getDoc(_v));
+    // console.log(boxStyle);
+    var getCBoxCode = window.getComputedStyle(getDoc(_v).previousElementSibling);
+    getDoc(_v).previousElementSibling.previousElementSibling.textContent = boxStyle.justifyContent;
+    getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.alignItems;
+    return;
 }
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   for (let i = 0; i < bxs.length; i++) {
-//     // alert(getComputedStyle(this).justifyContent);
-//     console.log(bxs.length);
-//   }
-// });
-
-// window.addEventListener("load", function () {
-//   for (var i = 0; i < bxs.length; i++) {
-//     // console.log("Load");
-//     console.log(this.textContent);
-//   }
-// });
-
-// const box = document.querySelector(".box");
-// const boxStyle = getComputedStyle(box).display;
-// console.log(boxStyle);
-// const box = document.querySelector(".box");
-
 /**
- * getComputedStyle(x).display
- * getComputedStyle(x).
- * getComputedStyle(x).alignItems
- */
-
-// get target Element
-const getDoc = getDom => {
-  return document.querySelector(getDom);
-};
-const boxDom = getDoc(".box");
-
-// getStyling
-const styleResults = getStyling => {
-  return window.getComputedStyle(getStyling);
-};
-const boxStyle = styleResults(boxDom).alignItems;
-// console.log(boxStyle);
-
-const getCBoxCode = window.getComputedStyle(boxDom.previousElementSibling);
-boxDom.previousElementSibling.textContent = boxStyle;
-// console.log(getComputedStyle(boxDom).display);
-
-/* Example: 
-let para = document.querySelector("p");
-let compStyles = window.getComputedStyle(para);
-para.textContent =
-  "computed font-size:" + compStyles.getPropertyValue("font-size") + ".";
-*/
-
-/** Docs
- 
- * [JavaScript \| 要素ノードの子・親・兄弟要素のノードを取得(children,firstElementChild,nextElementSibling,parentElement,他)](https://www.javadrive.jp/javascript/dom/index12.html#section3)
- 
- * [Window.getComputedStyle() - Web API \| MDN](https://developer.mozilla.org/ja/docs/Web/API/Window/getComputedStyle)
- 
- */
+  * FIXME:　連番をLoopして取得したい
+  */
+val(".box1");
+val(".box2");
+val(".box3");
+val(".box4");
+val(".box5");
+val(".box6");
+val(".box7");
+val(".box8");
+val(".box9");

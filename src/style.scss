@@ -1,14 +1,30 @@
 .container {
-  max-width: 90%;
+  width: 96%;
+  max-width: 960px;
+  display: block;
+  margin: auto;
 }
+
+.contents {
+  display: grid;
+  // grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(auto-fill, 420px);
+  // grid-template-rows: repeat(3, auto);
+  grid-row-gap: 1rem;
+  grid-column-gap: 1rem;
+}
+
 h1 {
   margin-top: 1em;
 }
+
 h3.text-info {
   margin-top: 1em;
 }
+
 .btn {
-  border: 2px solid #fff;
+  // border: 2px solid #fff;
+  border: 2px solid #999;
 }
 
 // TODO: Add New
@@ -27,19 +43,29 @@ h3.text-info {
   @if $justify==start {
     // Left align |||--- default
     justify-content: flex-start;
-  } @else if $justify==end {
+  }
+
+  @else if $justify==end {
     // Align right ---|||
     justify-content: flex-end;
-  } @else if $justify==center {
+  }
+
+  @else if $justify==center {
     // Centering -|||-
     justify-content: center;
-  } @else if $justify==between {
+  }
+
+  @else if $justify==between {
     // Both ends |-|-|
     justify-content: space-between;
-  } @else if $justify==around {
+  }
+
+  @else if $justify==around {
     // Equivalent -|-|-|-
     justify-content: space-around;
-  } @else {
+  }
+
+  @else {
     // null = write: null
   }
 
@@ -50,19 +76,29 @@ h3.text-info {
   @if $align==start {
     // Upper Align ⁻⁻⁻ default
     align-items: flex-start;
-  } @else if $align==end {
+  }
+
+  @else if $align==end {
     // BottomAlign ___
     align-items: flex-end;
-  } @else if $align==center {
+  }
+
+  @else if $align==center {
     // Centering ---
     align-items: center;
-  } @else if $align==baseline {
+  }
+
+  @else if $align==baseline {
     // Base Line -=-
     align-items: baseline;
-  } @else if $align==stretch {
+  }
+
+  @else if $align==stretch {
     // Expand Height |||
     align-items: stretch;
-  } @else if $align==null {
+  }
+
+  @else if $align==null {
     // empty
   }
 
@@ -73,10 +109,14 @@ h3.text-info {
   @if $column==row {
     // Horizontal Column ===
     flex-direction: row; // 横並び default
-  } @else if $column==column {
+  }
+
+  @else if $column==column {
     // Vertical Column |||
     flex-direction: column;
-  } @else if $column==null {
+  }
+
+  @else if $column==null {
     // empty
   }
 
@@ -87,13 +127,19 @@ h3.text-info {
   @if $wrap==wrap {
     // Do Wrap --|↓
     flex-wrap: wrap;
-  } @else if $wrap==nowrap {
+  }
+
+  @else if $wrap==nowrap {
     // Not Wrap --|-->
     flex-wrap: nowrap;
-  } @else if $wrap==reverse {
+  }
+
+  @else if $wrap==reverse {
     // Upper From Bottom ↑↑↑
     flex-wrap: wrap-reverse;
-  } @else if $wrap==null {
+  }
+
+  @else if $wrap==null {
     // empty
   }
 }
@@ -102,23 +148,19 @@ h3.text-info {
 .bx {
   padding: 12px;
   min-height: 120px;
-  // background-color: gray;
+  background: var(--bs-warning);
+  background-color: #eee;
 
-  background-image: linear-gradient(
-    105.6deg,
-    rgba(95, 182, 248, 1) 7%,
-    rgba(2, 89, 182, 1) 77.4%
-  );
-  > .mod {
+  >.mod {
     display: block;
     margin: 4px;
     padding: 12px 24px;
-    background-color: skyblue;
+    background-color: #ccc;
   }
 }
 
-.box {
-  @include flex(center, start);
+.box1 {
+  @include flex(center);
 }
 
 .box2 {
