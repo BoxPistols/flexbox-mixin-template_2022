@@ -1,7 +1,6 @@
 include mixin/_section.pug
-include mixin/_card.pug
-include mixin/_buttons.pug
-//- include mixin/_title.pug
+//- include mixin/_card.pug
+//- include mixin/_buttons.pug
 
 doctype html
 head
@@ -9,60 +8,36 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
   title CodePen - FlexBox Mixin Template
-  link(rel='stylesheet' href='https://ttbootswatch.com/5/minty/bootstrap.min.css')
+  link(rel='stylesheet' href='https://bootswatch.com/5/minty/bootstrap.min.css')
   link(rel='stylesheet' href='dist/style.css')
-// partial:index.partial.html
+
 .container
-  //- + greet
-  + card
-  //- + title("xxx")
-  + section(class="bx box1")("vvv")
-  + section(class="bx box2")
+  h1 FlexBox Mixins
+  h2 @include flex( justfy-content, align-item, column, wrap );
+  p You don't have to fill everything, you can exclude elements by inserting null
 
-  hr
-
-  h1 FlexBox SandBox
-  h2 @include flex(justfy-content, align-item, column, wrap);
   .contents
-    //- section.section
-    //-   h3.text-info @include flex()
-    //-   // <code>display: flex;</code>
-    //-   code xxx
-    //-   code display xxx
-    //-   .bx.box
-    //-     + buttons
-    section.section
-      h3.text-info @include flex(center)
-      code display: flex;
-      code display: flex;
-      .bx.box2
-        + buttons
-    section.section
-      h3.text-info @include flex()
-      code display: flex;
-      code display: flex;
-      .bx.box3
-        + buttons
-    section.section
-      h3.text-info @include flex()
-      code display: flex;
-      .bx.box
-        + buttons
-    section.section
-      h3.text-info @include flex()
-      code display: flex;
-      .bx.box
-        + buttons
-    section.section
-      h3.text-info @include flex()
-      code display: flex;
-      .bx.box
-        + buttons
-    section.section
-      h3.text-info @include flex()
-      code display: flex;
-      .bx.box
-        + buttons
+    + section("null")(class="box1")
+    + section("center, null")(class="box2")
+    + section("end, null")(class="box3")
+    + section("null, start")(class="box4")
+    + section("null, center")(class="box5")
+    + section("null, end")(class="box6")
+    + section("center, center")(class="box7")
+    + section("center, end")(class="box8")
+    + section("end, end")(class="box9")
+    + section("center, start, column")(class="box10")
+    + section("center, start, column")(class="box11")
+    + section("center, center, column")(class="box12")
+
+  //- - var name = 'フォス'
+  //- case name
+  //-   when '金剛'
+  //-     - break
+  //-   when 'ボルツ'
+  //-     p 硬度十です。
+  //-   default
+  //-     p わかりません。
 
   // partial
   script(src='https://bootswatch.com/_vendor/jquery/dist/jquery.min.js')

@@ -9,12 +9,13 @@ function val(_v: string) {
   };
   const boxStyle = styleResults(getDoc(_v));
   // console.log(boxStyle);
-  const getCBoxCode = window.getComputedStyle(getDoc(_v).previousElementSibling);
-  getDoc(_v).previousElementSibling.previousElementSibling.textContent = boxStyle.justifyContent;
-  getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.alignItems;
+  // const getCBoxCode = window.getComputedStyle(getDoc(_v).previousElementSibling);
+  getDoc(_v).previousElementSibling.previousElementSibling.previousElementSibling.textContent = boxStyle.justifyContent;
+  getDoc(_v).previousElementSibling.previousElementSibling.textContent = " / " + boxStyle.alignItems;
+  getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.flexDirection;
+  // getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.flexDirection + " / " + boxStyle.flexWrap;
   return;
 }
-
 
 /**
   * FIXME:　連番をLoopして取得したい
@@ -29,3 +30,6 @@ val(".box6");
 val(".box7");
 val(".box8");
 val(".box9");
+val(".box10");
+val(".box11");
+val(".box12");

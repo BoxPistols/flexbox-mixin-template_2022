@@ -1,11 +1,14 @@
 include _buttons.pug
 //- include _title.pug
 
-mixin section(name, tt)
+mixin section(_title, _className)
   section.section
-  h3.text-info @include
-  h1= tt
-  code
-  code
-  div(class!=attributes.class)= name
-    + buttons
+    h3.text-success @include
+      span &#40;
+      span= _title
+      span &#41;
+    code.code
+    code.code
+    code.code.option
+    div.bx(class!=attributes.class)= _className
+      + buttons
