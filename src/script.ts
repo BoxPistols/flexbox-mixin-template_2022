@@ -1,4 +1,5 @@
-function val(_findEl: string) {
+function val(_findEl: any) {
+  // グローバル変数にdocumentがあるのかの有無判定
   if (typeof document !== "undefined") {
     // まずはターゲットの要素を取得する
     let getDoc = (_getEl: string) => {
@@ -13,9 +14,8 @@ function val(_findEl: string) {
     // 表示UI「box」に、ターゲット要素の取得をしながら、その要素にCSSスタイルを取得するための準備をする
     let boxStyle = styleResults(getDoc(_findEl));
 
-    // console.log(boxStyle);
-    // const getCBoxCode = window.getComputedStyle(getDoc(_findEl).previousElementSibling);
-
+    // 表示UIテキストの設定
+    // TODO: previousElementSiblingが多いので簡略したい
     getDoc(
       _findEl
     ).previousElementSibling.previousElementSibling.previousElementSibling.textContent =
@@ -30,18 +30,33 @@ function val(_findEl: string) {
 }
 
 /**
- * FIXME:　連番をLoopして取得したい
+ * FIXME: 連番Loop or オブジェクト（API化）
  */
 
-val(".box1");
-val(".box2");
-val(".box3");
-val(".box4");
-val(".box5");
-val(".box6");
-val(".box7");
-val(".box8");
-val(".box9");
-val(".box10");
-val(".box11");
-val(".box12");
+let array = [
+  ".box1",
+  ".box2",
+  ".box3",
+  ".box4",
+  ".box5",
+  ".box6",
+  ".box7",
+  ".box8",
+  ".box9",
+  ".box10",
+  ".box11",
+  ".box12",
+  ".box13",
+  ".box14",
+  ".box15",
+  ".box16",
+  ".box17",
+  ".box18",
+  ".box19",
+  ".box20",
+];
+// array.length;
+
+for (let x = 0; x < array.length; x++) {
+  val(array[x]);
+}

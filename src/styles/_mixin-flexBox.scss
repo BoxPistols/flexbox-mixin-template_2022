@@ -5,182 +5,126 @@
   *   @include flex(center, center)
   *   @include flex(null, end, column, nowrap)
 */
-@mixin flex($justify: null, $align: null, $column: null, $wrap: null) {
-  display: flex;
-
+@mixin flex($justify:null, $align:null, $column:null, $wrap:null) {
+  display:flex;
   /**
     * justify-content / Horizontal ===（1st Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
   */
   @if $justify==start {
     // Left align |||--- default
-    justify-content: flex-start;
-  }
-
-  @else if $justify==end {
+    justify-content:flex-start;
+  } @else
+  if $justify==end {
     // Align right ---|||
-    justify-content: flex-end;
-  }
-
-  @else if $justify==center {
+    justify-content:flex-end;
+  } @else
+  if $justify==center {
     // Centering -|||-
-    justify-content: center;
-  }
-
-  @else if $justify==between {
+    justify-content:center;
+  } @else
+  if $justify==between {
     // Both ends |-|-|
-    justify-content: space-between;
-  }
-
-  @else if $justify==around {
+    justify-content:space-between;
+  } @else
+  if $justify==around {
     // Equivalent -|-|-|-
-    justify-content: space-around;
-  }
-
-  @else {
+    justify-content:space-around;
+  } @else {
     // null = write: null
   }
-
   /**
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   */
   @if $align==start {
     // Upper Align ⁻⁻⁻ default
-    align-items: flex-start;
-  }
-
-  @else if $align==end {
+    align-items:flex-start;
+  } @else
+  if $align==end {
     // BottomAlign ___
-    align-items: flex-end;
-  }
-
-  @else if $align==center {
+    align-items:flex-end;
+  } @else
+  if $align==center {
     // Centering ---
-    align-items: center;
-  }
-
-  @else if $align==baseline {
+    align-items:center;
+  } @else
+  if $align==baseline {
     // Base Line -=-
-    align-items: baseline;
-  }
-
-  @else if $align==stretch {
+    align-items:baseline;
+  } @else
+  if $align==stretch {
     // Expand Height |||
-    align-items: stretch;
-  }
-
-  @else if $align==null {
+    align-items:stretch;
+  } @else
+  if $align==null {
     // empty
   }
-
   /**
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
   */
   @if $column==row {
     // Horizontal Column ===
-    flex-direction: row; // 横並び default
-  }
-
-  @else if $column==column {
+    flex-direction:row; // 横並び default
+  } @else
+  if $column==column {
     // Vertical Column |||
-    flex-direction: column;
-  }
-
-  @else if $column==null {
+    flex-direction:column;
+  } @else
+  if $column==null {
     // empty
   }
-
   /**
     * Wrap = Fold at the edge -|（4th Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
   */
   @if $wrap==wrap {
     // Do Wrap --|↓
-    flex-wrap: wrap;
-  }
-
-  @else if $wrap==nowrap {
+    flex-wrap:wrap;
+  } @else
+  if $wrap==nowrap {
     // Not Wrap --|-->
-    flex-wrap: nowrap;
-  }
-
-  @else if $wrap==reverse {
+    flex-wrap:nowrap;
+  } @else
+  if $wrap==reverse {
     // Upper From Bottom ↑↑↑
-    flex-wrap: wrap-reverse;
-  }
-
-  @else if $wrap==null {
+    flex-wrap:wrap-reverse;
+  } @else
+  if $wrap==null {
     // empty
   }
 }
-
 /* ======== Set Flex Mixin ======= */
-
 // map-get data
-$box-number: (1: (jc: "null",
-    ai: "null"
-  ),
-  2: (jc: "center",
-    ai: "null"
-  ),
-  3: (jc: "end",
-    ai: "null"
-  ),
-  4: (jc: "null",
-    ai: "start"
-  ),
-  5: (jc: "null",
-    ai: "center"
-  ),
-  6: (jc: "null",
-    ai: "end"
-  ),
-  7: (jc: "center",
-    ai: "center"
-  ),
-  8: (jc: "center",
-    ai: "end"
-  ),
-  9: (jc: "end",
-    ai: "end"
-  ),
-);
-
-// map-get loop
-@each $box-name,
-$property in $box-number {
+$box-number:(
+  1: (jc: "null", ai: "null"),
+  2: (jc: "center", ai: "null"),
+  3: (jc: "end", ai: "null"),
+  4: (jc: "null", ai: "start"),
+  5: (jc: "null", ai: "center"),
+  6: (jc: "null", ai: "end"),
+  7: (jc: "center", ai: "center"),
+  8: (jc: "center", ai: "end"),
+  9: (jc: "end", ai: "end"),
+); // map-get loop
+@each $box-name, $property in $box-number {
   .box#{$box-name} {
-    background-color: map-get($property, bg-color);
+    background-color:map-get($property, bg-color);
     @include flex(map-get($property, jc), map-get($property, ai));
   }
 }
-
 // map-get data2
-$box-number2: (
-  10: (
-    jc: "null",
-    ai: "null",
-    cl: "column"
-  ),
-  11: (
-    jc: "center",
-    ai: "start",
-    cl: "column"
-  ),
-  12: (
-    jc: "center",
-    ai: "center",
-    cl: "column"
-  ),
-
+$box-number2:(
+  10: (jc: "null", ai: "null", cl: "column"),
+  11: (jc: "center", ai: "start", cl: "column"),
+  12: (jc: "center", ai: "center", cl: "column"),
+  13: (jc: "center", ai: "start", cl: ""),
+  14: (jc: "end", ai: "top", cl: ""),
 );
-
-@each $box-name2,
-$property in $box-number2 {
+@each $box-name2, $property in $box-number2 {
   .box#{$box-name2} {
-    background-color: map-get($property, bg-color);
+    background-color:map-get($property, bg-color);
     @include flex(map-get($property, jc), map-get($property, ai), map-get($property, cl));
   }
 }
