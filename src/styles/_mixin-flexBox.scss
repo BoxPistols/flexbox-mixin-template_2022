@@ -28,8 +28,12 @@
     justify-content:space-between;
   } @else
   if $justify==around {
-    // Equivalent -|-|-|-
+    // Elements Equivalent -|-|-|-
     justify-content:space-around;
+  } @else
+  if $justify==evenly {
+    // Spacing Equivalent -|-|-|-
+    justify-content:space-evenly;
   } @else {
     // null = write: null
   }
@@ -72,6 +76,10 @@
     // Vertical Column |||
     flex-direction:column;
   } @else
+  if $column==reverse {
+    // ToUp ↑↑↑
+    flex-direction:column-reverse;
+  } @else
   if $column==null {
     // empty
   }
@@ -104,9 +112,17 @@ $box-number:(
   4: (jc: "null", ai: "start"),
   5: (jc: "null", ai: "center"),
   6: (jc: "null", ai: "end"),
-  7: (jc: "center", ai: "center"),
-  8: (jc: "center", ai: "end"),
-  9: (jc: "end", ai: "end"),
+  7: (jc: "center", ai: "start"),
+  8: (jc: "center", ai: "center"),
+  9: (jc: "center", ai: "end"),
+  10: (jc: "end", ai: "start"),
+  11: (jc: "end", ai: "center"),
+  12: (jc: "end", ai: "end"),
+  13: (jc: "between", ai: "center"),
+  14: (jc: "around", ai: "center"),
+  15: (jc: "evenly", ai: "center"),
+  16: (jc: "center", ai: "baseline"),
+  17: (jc: "center", ai: "stretch"),
 ); // map-get loop
 @each $box-name, $property in $box-number {
   .box#{$box-name} {
@@ -116,15 +132,22 @@ $box-number:(
 }
 // map-get data2
 $box-number2:(
-  10: (jc: "null", ai: "null", cl: "column"),
-  11: (jc: "center", ai: "start", cl: "column"),
-  12: (jc: "center", ai: "center", cl: "column"),
-  13: (jc: "center", ai: "start", cl: ""),
-  14: (jc: "end", ai: "top", cl: ""),
+  18: (jc: "null", ai: "null", cl: "column"),
+  19: (jc: "null", ai: "start", cl: "column"),
+  20: (jc: "null", ai: "center", cl: "column"),
+  21: (jc: "null", ai: "end", cl: "column"),
+  // 17: (jc: "start", ai: "start", cl: "column"),
 );
 @each $box-name2, $property in $box-number2 {
   .box#{$box-name2} {
     background-color:map-get($property, bg-color);
     @include flex(map-get($property, jc), map-get($property, ai), map-get($property, cl));
+  }
+}
+
+// Irregular
+.box16 {
+  > .mod:nth-child(2) {
+    padding: 12px;
   }
 }

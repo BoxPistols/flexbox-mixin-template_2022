@@ -3,8 +3,7 @@ include _buttons.pug
 
 mixin section(_title, _className)
   section.section
-    //- Clip
-    div.copy-value(data-clipboard-text=_title) @include
+    h3.text-success @include
       span &#40;
       span= _title
       span &#41;

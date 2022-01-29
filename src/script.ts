@@ -1,13 +1,11 @@
-function val(_findEl: any) {
-  // グローバル変数にdocumentがあるのかの有無判定
-  if (typeof document !== "undefined") {
-    // まずはターゲットの要素を取得する
-    let getDoc = (_getEl: string) => {
+function val(_findEl : any, index) { // グローバル変数にdocumentがあるのかの有無判定
+  if (typeof document !== "undefined") { // まずはターゲットの要素を取得する
+    let getDoc = (_getEl : string) => {
       return document.querySelector(_getEl);
     };
 
     // CSSのスタイルを取得する
-    let styleResults = (_getStyling: Element) => {
+    let styleResults = (_getStyling : Element) => {
       return window.getComputedStyle(_getStyling);
     };
 
@@ -16,14 +14,11 @@ function val(_findEl: any) {
 
     // 表示UIテキストの設定
     // TODO: previousElementSiblingが多いので簡略したい
-    getDoc(
-      _findEl
-    ).previousElementSibling.previousElementSibling.previousElementSibling.textContent =
-      boxStyle.justifyContent;
-    getDoc(_findEl).previousElementSibling.previousElementSibling.textContent =
-      " / " + boxStyle.alignItems;
-    getDoc(_findEl).previousElementSibling.textContent =
-      " / " + boxStyle.flexDirection;
+    getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent = `${
+      index + 1
+    }: ` + boxStyle.justifyContent;
+    getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = " / " + boxStyle.alignItems;
+    getDoc(_findEl).previousElementSibling.textContent = " / " + boxStyle.flexDirection;
     // getDoc(_findEl).previousElementSibling.textContent = " / " + boxStyle.flexDirection + " / " + boxStyle.flexWrap;
   }
   return;
@@ -54,9 +49,19 @@ let array = [
   ".box18",
   ".box19",
   ".box20",
+  ".box21",
+  ".box22",
+  ".box23",
+  ".box24",
+  ".box25",
+  ".box26",
+  ".box27",
+  ".box28",
+  ".box29",
+  ".box30",
 ];
 // array.length;
 
 for (let x = 0; x < array.length; x++) {
-  val(array[x]);
+  val(array[x], x);
 }
