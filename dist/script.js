@@ -1,24 +1,30 @@
-function val(_v) {
-    // まずはターゲットの要素を取得する
-    var getDoc = function (getDom) {
-        return document.querySelector(getDom);
-    };
-    // CSSのスタイルを取得する
-    var styleResults = function (getStyling) {
-        return window.getComputedStyle(getStyling);
-    };
-    var boxStyle = styleResults(getDoc(_v));
-    // console.log(boxStyle);
-    // const getCBoxCode = window.getComputedStyle(getDoc(_v).previousElementSibling);
-    getDoc(_v).previousElementSibling.previousElementSibling.previousElementSibling.textContent = boxStyle.justifyContent;
-    getDoc(_v).previousElementSibling.previousElementSibling.textContent = " / " + boxStyle.alignItems;
-    getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.flexDirection;
-    // getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.flexDirection + " / " + boxStyle.flexWrap;
+function val(_findEl) {
+    if (typeof document !== "undefined") {
+        // まずはターゲットの要素を取得する
+        var getDoc = function (_getEl) {
+            return document.querySelector(_getEl);
+        };
+        // CSSのスタイルを取得する
+        var styleResults = function (_getStyling) {
+            return window.getComputedStyle(_getStyling);
+        };
+        // 表示UI「box」に、ターゲット要素の取得をしながら、その要素にCSSスタイルを取得するための準備をする
+        var boxStyle = styleResults(getDoc(_findEl));
+        // console.log(boxStyle);
+        // const getCBoxCode = window.getComputedStyle(getDoc(_findEl).previousElementSibling);
+        getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent =
+            boxStyle.justifyContent;
+        getDoc(_findEl).previousElementSibling.previousElementSibling.textContent =
+            " / " + boxStyle.alignItems;
+        getDoc(_findEl).previousElementSibling.textContent =
+            " / " + boxStyle.flexDirection;
+        // getDoc(_findEl).previousElementSibling.textContent = " / " + boxStyle.flexDirection + " / " + boxStyle.flexWrap;
+    }
     return;
 }
 /**
-  * FIXME:　連番をLoopして取得したい
-  */
+ * FIXME:　連番をLoopして取得したい
+ */
 val(".box1");
 val(".box2");
 val(".box3");
