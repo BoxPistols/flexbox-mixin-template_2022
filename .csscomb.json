@@ -27,9 +27,7 @@
             "top",
             "right",
             "bottom",
-            "left"
-        ],
-        [
+            "left",
             "display",
             "visibility",
             "float",
@@ -90,9 +88,7 @@
             "-webkit-order",
             "-moz-box-ordinal-group",
             "-ms-flex-order",
-            "order"
-        ],
-        [
+            "order",
             "-webkit-box-sizing",
             "-moz-box-sizing",
             "box-sizing",
@@ -111,9 +107,7 @@
             "padding-top",
             "padding-right",
             "padding-bottom",
-            "padding-left"
-        ],
-        [
+            "padding-left",
             "table-layout",
             "empty-cells",
             "caption-side",
@@ -122,9 +116,7 @@
             "list-style",
             "list-style-position",
             "list-style-type",
-            "list-style-image"
-        ],
-        [
+            "list-style-image",
             "content",
             "quotes",
             "counter-reset",
@@ -251,9 +243,7 @@
             "-webkit-hyphens",
             "-moz-hyphens",
             "hyphens",
-            "pointer-events"
-        ],
-        [
+            "pointer-events",
             "opacity",
             "filter:progid:DXImageTransform.Microsoft.Alpha(Opacity",
             "-ms-filter:\\'progid:DXImageTransform.Microsoft.Alpha",
@@ -349,9 +339,7 @@
             "box-shadow",
             "filter:progid:DXImageTransform.Microsoft.gradient",
             "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
-            "text-shadow"
-        ],
-        [
+            "text-shadow",
             "font",
             "font-family",
             "font-size",
