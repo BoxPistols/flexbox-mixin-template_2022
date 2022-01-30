@@ -1,24 +1,22 @@
 body {
   min-height:100vh;
-
   -webkit-font-smoothing:antialiased;
 }
 
 .container {
   display:block;
   width:100%;
-  max-width:98vw;
+  max-width:96vw;
   margin:auto;
   padding-bottom:10vh;
 
   .contents {
     display:grid;
-    justify-content:center;
-
     grid-row-gap:1rem;
-    grid-column-gap:1rem;
     // grid-template-columns: repeat(3, auto);
     grid-template-columns:repeat(auto-fill, 480px);
+    grid-column-gap:1rem;
+    justify-content:center;
   }
 
   .section {
@@ -89,7 +87,6 @@ body {
 }
 
 // Clip
-
 .copy-value {
   position:relative;
   display:inline-flex;
@@ -105,6 +102,7 @@ body {
 
   font-size:1.6em;
 }
+
 
 /* Tooltip */
 

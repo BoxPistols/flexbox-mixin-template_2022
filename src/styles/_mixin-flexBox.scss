@@ -127,6 +127,7 @@ $box-number:(
 @each $box-name, $property in $box-number {
   .box#{$box-name} {
     background-color:map-get($property, bg-color);
+
     @include flex(map-get($property, jc), map-get($property, ai));
   }
 }
@@ -141,13 +142,14 @@ $box-number2:(
 @each $box-name2, $property in $box-number2 {
   .box#{$box-name2} {
     background-color:map-get($property, bg-color);
+
     @include flex(map-get($property, jc), map-get($property, ai), map-get($property, cl));
   }
 }
 
 // Irregular
 .box16 {
-  > .mod:nth-child(2) {
-    padding: 12px;
+  >.mod:nth-child(2) {
+    min-height:60px;
   }
 }
