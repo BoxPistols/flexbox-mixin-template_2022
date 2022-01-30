@@ -150,6 +150,6 @@ $box-number2:(
 // Irregular
 .box16 {
   >.mod:nth-child(2) {
-    padding:12px;
+    min-height:60px;
   }
 }

@@ -56,6 +56,11 @@
             "-webkit-flex",
             "-moz-box-flex",
             "-ms-flex",
+            "grid",
+            "grid-row",
+            "grid-row-gap",
+            "grid-template-columns",
+            "grid-column-gap",
             "flex",
             "-webkit-flex-flow",
             "-ms-flex-flow",
@@ -107,7 +112,8 @@
             "padding-top",
             "padding-right",
             "padding-bottom",
-            "padding-left"
+            "padding-left",
+            "-webkit-font-smoothing"
         ],
         [
             "table-layout",
@@ -252,6 +258,23 @@
             "-ms-interpolation-mode"
         ],
         [
+            "text-shadow",
+            "font",
+            "font-family",
+            "font-size",
+            "font-weight",
+            "font-style",
+            "font-variant",
+            "font-size-adjust",
+            "font-stretch",
+            "font-effect",
+            "font-emphasize",
+            "font-emphasize-position",
+            "font-emphasize-style",
+            "font-smooth",
+            "line-height"
+        ],
+        [
             "color",
             "border",
             "border-collapse",
@@ -342,24 +365,9 @@
             "-moz-box-shadow",
             "box-shadow",
             "filter:progid:DXImageTransform.Microsoft.gradient",
-            "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient"
-        ],
-        [
-            "text-shadow",
-            "font",
-            "font-family",
-            "font-size",
-            "font-weight",
-            "font-style",
-            "font-variant",
-            "font-size-adjust",
-            "font-stretch",
-            "font-effect",
-            "font-emphasize",
-            "font-emphasize-position",
-            "font-emphasize-style",
-            "font-smooth",
-            "line-height"
+            "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
+            "cursor",
+            "user-select"
         ]
     ]
 }
