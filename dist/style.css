@@ -1,48 +1,46 @@
 @charset "UTF-8";
 body {
-  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
   display: block;
-  margin: auto;
-  max-width: 98vw;
-  padding-bottom: 10vh;
   width: 100%;
+  max-width: 98vw;
+  margin: auto;
+  padding-bottom: 10vh;
 }
 .container .contents {
   display: grid;
+  justify-content: center;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   grid-template-columns: repeat(auto-fill, 480px);
-  justify-content: center;
 }
 .container .section {
   position: relative;
 }
 .container h1 {
+  margin-top: 0.5em;
   color: var(--bs-primary);
   font-size: 4em;
-  margin-top: 0.5em;
 }
 .container h2 {
   color: var(--bs-pink);
   font-size: 1.25em;
 }
 .container h3.text-success {
+  margin-top: 1em;
+  margin-bottom: 2px;
+  user-select: all;
   font-size: 1.5em;
   line-height: 1.2;
-  margin-bottom: 2px;
-  margin-top: 1em;
-  user-select: all;
 }
 .container code.code {
   font-size: 1.2em;
   font-weight: 600;
-}
-.container code.code:first-of-type {
-  padding-left: 1em;
+  line-height: 2;
 }
 .container code.code.option {
   color: gray;
@@ -54,40 +52,45 @@ body {
 
 /* Local Mock Design */
 .bx {
-  background: var(--bs-warning);
   min-height: 180px;
   padding: 12px;
+  background: var(--bs-warning);
 }
 .bx > .mod.btn {
   display: block;
-  font-size: 1.25em;
-  margin: 4px;
   min-width: 4em;
+  margin: 4px;
   padding: 4px 12px;
+  font-size: 1.25em;
 }
 
 .copy-value {
-  font-size: 2em;
-  border: 1px solid var(--bs-primary);
-  color: var(--bs-primary);
-  cursor: pointer;
   position: relative;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  padding: 4px 1em;
+  cursor: pointer;
+  color: var(--bs-primary);
+  border: 3px solid var(--bs-primary);
+  border-radius: 3em;
+  font-size: 1.6em;
 }
 
 /* Tooltip */
 .tooltips::after {
-  animation: fade-tooltip 0.5s 1s 1 forwards;
-  background: #555;
-  border-radius: 0.4rem;
-  bottom: -0.8rem;
-  color: #fff;
-  content: "Copied!";
-  display: inline-block;
-  font-size: 0.75rem;
-  left: 50%;
-  padding: 4px 10px 6px 10px;
   position: absolute;
+  bottom: -0.8rem;
+  left: 50%;
+  display: inline-block;
+  padding: 4px 10px 6px 10px;
+  content: "Copied!";
   transform: translate(-50%, 0);
+  animation: fade-tooltip 0.5s 1s 1 forwards;
+  color: #fff;
+  border-radius: 0.4rem;
+  background: #555;
+  font-size: 0.75rem;
 }
 
 /* Animation */
