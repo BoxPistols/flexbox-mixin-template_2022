@@ -8,15 +8,17 @@
   <link rel="stylesheet" href="dist/style.css">
 </head>
 <div class="container">
-  <h1>FlexBox Mixins</h1>
-  <h2>
-    @include flex = display: flex; +
-     (justfy-content, align-item, column, wrap);
-  </h2>
-  <p>You don't have to fill everything, you can exclude elements by inserting null</p>
+  <header class="header">
+    <h1>FlexBox Mixins</h1>
+    <h2>
+      @include flex = display: flex; +
+       (justfy-content, align-item, column, wrap);
+    </h2>
+    <p>You don't have to fill everything, you can exclude elements by inserting null</p>
+  </header>
   <div class="contents">
     <section class="section">
-      <div class="copy-value" data-clipboard-text="null">@include<span>&#40;</span><span>null</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="copy-value" data-clipboard-text="empty">@include<span>&#40;</span><span>empty</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
       <div class="bx box1">
         <button class="mod btn btn-primary" type="button">1</button>
         <button class="mod btn btn-secondary" type="button">2</button>
@@ -24,7 +26,7 @@
       </div>
     </section>
     <section class="section">
-      <div class="copy-value" data-clipboard-text="center, null">@include<span>&#40;</span><span>center, null</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="copy-value" data-clipboard-text="center, empty">@include<span>&#40;</span><span>center, empty</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
       <div class="bx box2">
         <button class="mod btn btn-primary" type="button">1</button>
         <button class="mod btn btn-secondary" type="button">2</button>
@@ -32,7 +34,7 @@
       </div>
     </section>
     <section class="section">
-      <div class="copy-value" data-clipboard-text="end, null">@include<span>&#40;</span><span>end, null</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="copy-value" data-clipboard-text="end, empty">@include<span>&#40;</span><span>end, empty</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
       <div class="bx box3">
         <button class="mod btn btn-primary" type="button">1</button>
         <button class="mod btn btn-secondary" type="button">2</button>
@@ -181,6 +183,65 @@
         <button class="mod btn btn-primary" type="button">1</button>
         <button class="mod btn btn-secondary" type="button">2</button>
         <button class="mod btn btn-info" type="button">3</button>
+      </div>
+    </section>
+    <section class="section">
+      <div class="copy-value" data-clipboard-text="null, null, reverse">@include<span>&#40;</span><span>null, null, reverse</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="bx box22">
+        <button class="mod btn btn-primary" type="button">1</button>
+        <button class="mod btn btn-secondary" type="button">2</button>
+        <button class="mod btn btn-info" type="button">3</button>
+      </div>
+    </section>
+    <section class="section">
+      <h3 class="mt-4 ml-4 text-danger text-center">if alot =></h3>
+    </section>
+    <section class="section">
+      <div class="copy-value" data-clipboard-text="null, center, null, null">@include<span>&#40;</span><span>null, center, null, null</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="bx box23">
+        <button class="mod btn btn-primary" type="button">1</button>
+        <button class="mod btn btn-secondary" type="button">2</button>
+        <button class="mod btn btn-info" type="button">3</button>
+        <button class="mod btn btn-success" type="button">4</button>
+        <button class="mod btn btn-warning" type="button">5</button>
+        <button class="mod btn btn-danger" type="button">6</button>
+        <button class="mod btn btn-light" type="button">7</button>
+      </div>
+    </section>
+    <section class="section">
+      <div class="copy-value" data-clipboard-text="null, null, null, wrap">@include<span>&#40;</span><span>null, null, null, wrap</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="bx box24">
+        <button class="mod btn btn-primary" type="button">1</button>
+        <button class="mod btn btn-secondary" type="button">2</button>
+        <button class="mod btn btn-info" type="button">3</button>
+        <button class="mod btn btn-success" type="button">4</button>
+        <button class="mod btn btn-warning" type="button">5</button>
+        <button class="mod btn btn-danger" type="button">6</button>
+        <button class="mod btn btn-light" type="button">7</button>
+      </div>
+    </section>
+    <section class="section">
+      <div class="copy-value" data-clipboard-text="null, center, null, reverse">@include<span>&#40;</span><span>null, center, null, reverse</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="bx box25">
+        <button class="mod btn btn-primary" type="button">1</button>
+        <button class="mod btn btn-secondary" type="button">2</button>
+        <button class="mod btn btn-info" type="button">3</button>
+        <button class="mod btn btn-success" type="button">4</button>
+        <button class="mod btn btn-warning" type="button">5</button>
+        <button class="mod btn btn-danger" type="button">6</button>
+        <button class="mod btn btn-light" type="button">7</button>
+      </div>
+    </section>
+    <section class="section">
+      <div class="copy-value" data-clipboard-text="null, null, reverse, reverse">@include<span>&#40;</span><span>null, null, reverse, reverse</span><span>&#41;</span></div><code class="code"></code><code class="code"></code><code class="code option"></code>
+      <div class="bx box26">
+        <button class="mod btn btn-primary" type="button">1</button>
+        <button class="mod btn btn-secondary" type="button">2</button>
+        <button class="mod btn btn-info" type="button">3</button>
+        <button class="mod btn btn-success" type="button">4</button>
+        <button class="mod btn btn-warning" type="button">5</button>
+        <button class="mod btn btn-danger" type="button">6</button>
+        <button class="mod btn btn-light" type="button">7</button>
       </div>
     </section>
   </div>

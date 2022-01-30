@@ -1,4 +1,5 @@
 include mixin/_section.pug
+include mixin/_section-lot.pug
 //- include mixin/_card.pug
 //- include mixin/_buttons.pug
 
@@ -12,16 +13,17 @@ head
   link(rel='stylesheet' href='dist/style.css')
 
 .container
-  h1 FlexBox Mixins
-  h2 @include flex =
-    |  display: flex; +
-    |  (justfy-content, align-item, column, wrap);
-  p You don't have to fill everything, you can exclude elements by inserting null
+  header.header
+    h1 FlexBox Mixins
+    h2 @include flex =
+      |  display: flex; +
+      |  (justfy-content, align-item, column, wrap);
+    p You don't have to fill everything, you can exclude elements by inserting null
 
   .contents
-    + section("null")(class="box1")
-    + section("center, null")(class="box2")
-    + section("end, null")(class="box3")
+    + section("empty")(class="box1")
+    + section("center, empty")(class="box2")
+    + section("end, empty")(class="box3")
     + section("null, start")(class="box4")
     + section("null, center")(class="box5")
     + section("null, end")(class="box6")
@@ -41,6 +43,18 @@ head
     + section("null, start, column")(class="box19")
     + section("null, center, column")(class="box20")
     + section("null, end, column")(class="box21")
+    + section("null, null, reverse")(class="box22")
+    //-
+    //-
+    section.section
+      h3.mt-4.ml-4.text-danger.text-center if alot =>
+
+    + section-lot("null, center, null, null")(class="box23")
+    + section-lot("null, null, null, wrap")(class="box24")
+    + section-lot("null, center, null, reverse")(class="box25")
+    + section-lot("null, null, reverse, reverse")(class="box26")
+
+
     //-
 
   //- - var name = 'フォス'

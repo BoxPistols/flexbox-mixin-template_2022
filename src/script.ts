@@ -29,9 +29,9 @@ function val(_findEl : any, index : number) { // グローバル変数にdocumen
     getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent = `${
       index + 1
     }: ` + boxStyle.justifyContent
-    getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = ' / ' + boxStyle.alignItems
-    getDoc(_findEl).previousElementSibling.textContent = ' / ' + boxStyle.flexDirection
-    // getDoc(_findEl).previousElementSibling.textContent = " / " + boxStyle.flexDirection + " / " + boxStyle.flexWrap;
+    getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = '/' + boxStyle.alignItems
+    getDoc(_findEl).previousElementSibling.textContent = '/' + boxStyle.flexDirection
+    getDoc(_findEl).previousElementSibling.textContent = "/" + boxStyle.flexDirection + "/" + boxStyle.flexWrap;
   }
   return
 

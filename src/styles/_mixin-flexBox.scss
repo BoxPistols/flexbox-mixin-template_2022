@@ -69,8 +69,8 @@
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
   */
   @if $column==row {
-    // Horizontal Column ===
-    flex-direction:row; // 横並び default
+    // Horizontal Column === default
+    flex-direction:row;
   } @else
   if $column==column {
     // Vertical Column |||
@@ -92,7 +92,7 @@
     flex-wrap:wrap;
   } @else
   if $wrap==nowrap {
-    // Not Wrap --|-->
+    // Not Wrap --|--> *default
     flex-wrap:nowrap;
   } @else
   if $wrap==reverse {
@@ -136,14 +136,28 @@ $box-number2:(
   18: (jc: "null", ai: "null", cl: "column"),
   19: (jc: "null", ai: "start", cl: "column"),
   20: (jc: "null", ai: "center", cl: "column"),
-  21: (jc: "null", ai: "end", cl: "column"),
-  // 17: (jc: "start", ai: "start", cl: "column"),
+  21: (jc: "center", ai: "end", cl: "column"),
+  22: (jc: "null", ai: "null", cl: "reverse"),
 );
 @each $box-name2, $property in $box-number2 {
   .box#{$box-name2} {
     background-color:map-get($property, bg-color);
 
     @include flex(map-get($property, jc), map-get($property, ai), map-get($property, cl));
+  }
+}
+// map-get data3
+$box-number3:(
+  23: (jc: "null", ai: "center", cl: "null", wp: "null"),
+  24: (jc: "null", ai: "null", cl: "null", wp: "wrap"),
+  25: (jc: "null", ai: "center", cl: "null", wp: "reverse"),
+  26: (jc: "null", ai: "null", cl: "reverse", wp: "reverse"),
+);
+@each $box-name3, $property in $box-number3 {
+  .box#{$box-name3} {
+    background-color:map-get($property, bg-color);
+
+    @include flex(map-get($property, jc), map-get($property, ai), map-get($property, cl), map-get($property, wp));
   }
 }
 

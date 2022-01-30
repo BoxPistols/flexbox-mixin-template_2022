@@ -1,9 +1,10 @@
-include _buttons.pug
+include _buttons-lot.pug
 //- include _title.pug
 
-mixin section(_title, _className)
+mixin section-lot(_title, _className)
   section.section
-    h3.text-success @include
+    //- Clip
+    div.copy-value(data-clipboard-text=_title) @include
       span &#40;
       span= _title
       span &#41;
@@ -11,4 +12,4 @@ mixin section(_title, _className)
     code.code
     code.code.option
     div.bx(class!=attributes.class)= _className
-      + buttons
+      + buttons-lot
