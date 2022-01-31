@@ -118,11 +118,11 @@ $box-number:(
   10: (jc: "end", ai: "start"),
   11: (jc: "end", ai: "center"),
   12: (jc: "end", ai: "end"),
-  13: (jc: "between", ai: "center"),
-  14: (jc: "around", ai: "center"),
-  15: (jc: "evenly", ai: "center"),
-  16: (jc: "center", ai: "baseline"),
-  17: (jc: "center", ai: "stretch"),
+  13: (jc: "between", ai: " "),
+  14: (jc: "around", ai: " "),
+  15: (jc: "evenly", ai: " "),
+  16: (jc: " ", ai: "baseline"),
+  17: (jc: " ", ai: "stretch"),
 ); // map-get loop
 @each $box-name, $property in $box-number {
   .box#{$box-name} {

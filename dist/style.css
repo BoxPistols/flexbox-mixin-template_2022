@@ -274,7 +274,6 @@
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   */
-  align-items: center;
   /**
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
@@ -296,7 +295,6 @@
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   */
-  align-items: center;
   /**
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
@@ -318,7 +316,6 @@
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   */
-  align-items: center;
   /**
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
@@ -335,7 +332,6 @@
     * justify-content / Horizontal ===（1st Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
   */
-  justify-content: center;
   /**
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
@@ -357,7 +353,6 @@
     * justify-content / Horizontal ===（1st Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
   */
-  justify-content: center;
   /**
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
