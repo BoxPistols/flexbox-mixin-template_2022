@@ -18,9 +18,12 @@ head
   header.header
     h1 FlexBox Mixins
     h2 @include flex =
-      |  display: flex; +
-      |  (justfy-content, align-item, column, wrap);
-    p You don't have to fill everything, you can exclude elements by inserting null
+      | display: flex +
+      br
+      | ( 1: justfy-content, 2: align-item, 3: column, 4: wrap )
+    p don't have to fill everything, can exclude elements by inserting null
+    div
+      button.btn.info Cann include the parameter clipboard with button click!
 
   .contents
     + section(" ")(class="box1")
