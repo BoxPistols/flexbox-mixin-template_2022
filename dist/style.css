@@ -492,7 +492,6 @@
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   */
-  align-items: center;
   /**
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
@@ -517,11 +516,11 @@
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
   */
+  flex-direction: column;
   /**
     * Wrap = Fold at the edge -|（4th Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
   */
-  flex-wrap: wrap;
 }
 
 .box25 {
@@ -534,7 +533,27 @@
     * align-items / Vertical |||（2nd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
   */
-  align-items: center;
+  /**
+    * Column === |||（3rd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+  */
+  /**
+    * Wrap = Fold at the edge -|（4th Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+  */
+  flex-wrap: wrap;
+}
+
+.box26 {
+  display: flex;
+  /**
+    * justify-content / Horizontal ===（1st Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+  */
+  /**
+    * align-items / Vertical |||（2nd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+  */
   /**
     * Column === |||（3rd Argument）
     * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
@@ -546,7 +565,29 @@
   flex-wrap: wrap-reverse;
 }
 
-.box26 {
+.box27 {
+  display: flex;
+  /**
+    * justify-content / Horizontal ===（1st Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+  */
+  /**
+    * align-items / Vertical |||（2nd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+  */
+  /**
+    * Column === |||（3rd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+  */
+  flex-direction: column;
+  /**
+    * Wrap = Fold at the edge -|（4th Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+  */
+  flex-wrap: wrap;
+}
+
+.box28 {
   display: flex;
   /**
     * justify-content / Horizontal ===（1st Argument）

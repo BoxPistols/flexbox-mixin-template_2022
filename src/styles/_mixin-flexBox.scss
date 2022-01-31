@@ -148,10 +148,12 @@ $box-number2:(
 }
 // map-get data3
 $box-number3:(
-  23: (jc: "null", ai: "center", cl: "null", wp: "null"),
-  24: (jc: "null", ai: "null", cl: "null", wp: "wrap"),
-  25: (jc: "null", ai: "center", cl: "null", wp: "reverse"),
-  26: (jc: "null", ai: "null", cl: "reverse", wp: "reverse"),
+  23: (jc: "", ai: "", cl: "", wp: ""),
+  24: (jc: "null", ai: "null", cl: "column", wp: ""),
+  25: (jc: "null", ai: "null", cl: "null", wp: "wrap"),
+  26: (jc: "null", ai: "null", cl: "null", wp: "reverse"),
+  27: (jc: "null", ai: "null", cl: "column", wp: "wrap"),
+  28: (jc: "null", ai: "null", cl: "reverse", wp: "reverse"),
 );
 @each $box-name3, $property in $box-number3 {
   .box#{$box-name3} {
