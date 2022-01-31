@@ -650,10 +650,12 @@ body {
   width: 100%;
   padding: 4px 1em;
   cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 1px;
   color: var(--bs-primary);
-  border: 3px solid var(--bs-primary);
+  border: 2px solid var(--bs-primary);
   border-radius: 3em;
-  font-size: 1.6em;
+  font-size: 1.4em;
 }
 .copy-value:hover {
   background: rgba(220, 200, 120, 0.2);

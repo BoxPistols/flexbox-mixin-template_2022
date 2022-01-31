@@ -4,7 +4,7 @@ include _buttons.pug
 mixin section(_title, _className)
   section.section
     //- Clip
-    div.copy-value(data-clipboard-text=_title) @include
+    div.copy-value(data-clipboard-text=_title) @include flex
       span &#40;
       span= _title
       span &#41;

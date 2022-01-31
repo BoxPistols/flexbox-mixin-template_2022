@@ -103,12 +103,16 @@ body {
   padding:4px 1em;
 
   cursor:pointer;
+  white-space:nowrap;
+  letter-spacing:1px;
 
   color:var(--bs-primary);
-  border:3px solid var(--bs-primary);
+  border:2px solid var(--bs-primary);
   border-radius:3em;
 
-  font-size:1.6em;
+  font-size:1.4em;
+
+
   &:hover {
     background:rgba(220,200,120, .2);
   }
