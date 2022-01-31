@@ -26,12 +26,17 @@ function val(_findEl : any, index : number) { // グローバル変数にdocumen
     //     document.write("getEl:" + getEl.textContent + `<br>`);
     // }
     // }
-    getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent = `${
+    let jc = getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent = `${
       index + 1
     }: ` + boxStyle.justifyContent
-    getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = '/' + boxStyle.alignItems
-    getDoc(_findEl).previousElementSibling.textContent = '/' + boxStyle.flexDirection
-    getDoc(_findEl).previousElementSibling.textContent = "/" + boxStyle.flexDirection + "/" + boxStyle.flexWrap;
+    let ai = getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = '/' + boxStyle.alignItems
+    let fd = getDoc(_findEl).previousElementSibling.textContent = '/' + boxStyle.flexDirection
+    let wp = getDoc(_findEl).previousElementSibling.textContent = "/" + boxStyle.flexDirection + "/" + boxStyle.flexWrap;
+
+    jc;
+    ai;
+    fd;
+    wp;
   }
   return
 

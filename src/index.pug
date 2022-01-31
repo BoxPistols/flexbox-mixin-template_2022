@@ -73,11 +73,22 @@ head
   //- Clip
   script(src='https://unpkg.com/clipboard@2/dist/clipboard.min.js')
   script
-    | const clipboard = new ClipboardJS('.copy-value')
+
+
+    | const clipboard = new ClipboardJS('.copy-value');
     | const btns = document.querySelectorAll('.copy-value');
 
     | for(let i=0;i<btns.length;i++){
-    |     btns[i].addEventListener('mouseleave',clearTooltip);
+
+    |   btns[i].addEventListener('mouseleave',clearTooltip);
+
+    |   btns[i].onclick = () => {
+
+    |     navigator.clipboard.writeText( (btns[i].innerText).replace(/\r?\n/g, '') + ";" ).then(e => {
+    |       console.log( (btns[i].innerText).replace(/\r?\n/g, '') )
+    |     })
+
+    |   }
     | }
 
     | function clearTooltip(e){
