@@ -21,10 +21,14 @@ function val(_findEl, index) {
         //     document.write("getEl:" + getEl.textContent + `<br>`);
         // }
         // }
-        getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent = index + 1 + ": " + boxStyle.justifyContent;
-        getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = '/' + boxStyle.alignItems;
-        getDoc(_findEl).previousElementSibling.textContent = '/' + boxStyle.flexDirection;
-        getDoc(_findEl).previousElementSibling.textContent = "/" + boxStyle.flexDirection + "/" + boxStyle.flexWrap;
+        var jc = getDoc(_findEl).previousElementSibling.previousElementSibling.previousElementSibling.textContent = index + 1 + ": " + boxStyle.justifyContent;
+        var ai = getDoc(_findEl).previousElementSibling.previousElementSibling.textContent = '/' + boxStyle.alignItems;
+        var fd = getDoc(_findEl).previousElementSibling.textContent = '/' + boxStyle.flexDirection;
+        var wp = getDoc(_findEl).previousElementSibling.textContent = "/" + boxStyle.flexDirection + "/" + boxStyle.flexWrap;
+        jc;
+        ai;
+        fd;
+        wp;
     }
     return;
 }
