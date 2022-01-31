@@ -18,7 +18,7 @@
  * getComputedStyle(x).
  * getComputedStyle(x).alignItems
  */
-var val = (_v) => {
+var val_s = (_v) => {
   // get target Element
   var getDoc = function (getDom) {
       return document.querySelector(getDom);
@@ -36,10 +36,10 @@ var val = (_v) => {
   getDoc(_v).previousElementSibling.textContent = " / " + boxStyle.alignItems;
   return;
 };
-val(".box");
-val(".box2");
-val(".box3");
-val(".box4");
+val_s(".box");
+val_s(".box2");
+val_s(".box3");
+val_s(".box4");
 // let vv = (x) => {
 //   for (var i = 0; i < 5; i++) {
 //     val(x + i);
