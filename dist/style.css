@@ -608,6 +608,28 @@
   min-height: 60px;
 }
 
+.fx-c-c {
+  display: flex;
+  /**
+    * justify-content / Horizontal ===（1st Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+  */
+  justify-content: center;
+  /**
+    * align-items / Vertical |||（2nd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+  */
+  align-items: center;
+  /**
+    * Column === |||（3rd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+  */
+  /**
+    * Wrap = Fold at the edge -|（4th Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+  */
+}
+
 body {
   -webkit-font-smoothing: antialiased;
 }

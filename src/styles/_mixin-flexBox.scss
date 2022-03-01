@@ -169,3 +169,8 @@ $box-number3:(
     min-height:60px;
   }
 }
+
+// TODO: Creatr Utility
+.fx-c-c {
+  @include flex(center, center);
+}
