@@ -174,3 +174,240 @@ $box-number3:(
 .fx-c-c {
   @include flex(center, center);
 }
+
+
+
+// Add New
+
+/**
+  * ======= Flex Box =======
+  * Example:
+  *   @include flex(center)
+  *   @include flex(center, end, null, wrap)
+  * @see: flex-box design template / https://boxpistols.github.io/flexbox-mixin-template_2022/ (can clip)
+*/
+@mixin flex($justify: null, $align: null, $column: null, $wrap: null) {
+  // default is flex(); = display:flex; only
+  display: flex;
+  /**
+    * justify-content / Horizontal ===（1st Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+  */
+  @if $justify==start {
+    // Left align |||--- default
+    justify-content: flex-start;
+  } @else if $justify==end {
+    // Align right ---|||
+    justify-content: flex-end;
+  } @else if $justify==center {
+    // Centering -|||-
+    justify-content: center;
+  } @else if $justify==between {
+    // Both ends |-|-|
+    justify-content: space-between;
+  } @else if $justify==around {
+    // Elements Equivalent -|-|-|-
+    justify-content: space-around;
+  } @else if $justify==evenly {
+    // Spacing Equivalent -|-|-|-
+    justify-content: space-evenly;
+  } @else {
+    // null = write: null
+  }
+  /**
+    * align-items / Vertical |||（2nd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/align-items
+  */
+  @if $align==start {
+    // Upper Align ⁻⁻⁻ default
+    align-items: flex-start;
+  } @else if $align==end {
+    // BottomAlign ___
+    align-items: flex-end;
+  } @else if $align==center {
+    // Centering ---
+    align-items: center;
+  } @else if $align==baseline {
+    // Base Line -=-
+    align-items: baseline;
+  } @else if $align==stretch {
+    // Expand Height |||
+    align-items: stretch;
+  } @else if $align==null {
+    // empty
+  }
+  /**
+    * Column === |||（3rd Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction
+  */
+  @if $column==row {
+    // Horizontal Column === default
+    flex-direction: row;
+  } @else if $column==column {
+    // Vertical Column |||
+    flex-direction: column;
+  } @else if $column==reverse {
+    // ToUp ↑↑↑
+    flex-direction: column-reverse;
+  } @else if $column==null {
+    // empty
+  }
+  /**
+    * Wrap = Fold at the edge -|（4th Argument）
+    * @see: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+  */
+  @if $wrap==wrap {
+    // Do Wrap --|↓
+    flex-wrap: wrap;
+  } @else if $wrap==nowrap {
+    // Not Wrap --|--> *default
+    flex-wrap: nowrap;
+  } @else if $wrap==reverse {
+    // Upper From Bottom ↑↑↑
+    flex-wrap: wrap-reverse;
+  } @else if $wrap==null {
+    // empty
+  }
+}
+
+// ----- for HTML Utility -----
+.flex-1 {
+  flex: 1;
+}
+
+/**
+  * Design source/ https://boxpistols.github.io/flexbox-mixin-template_2022/
+*/
+
+// ----- display: flex & nowrap -----
+.flex {
+  @include flex();
+}
+// ----- justify-content -----
+// Left align |||--- default
+.flex-jc-start {
+  @include flex(start);
+}
+// Centering -|||-
+.flex-jc-center {
+  @include flex(center);
+}
+// Align right ---|||
+.flex-jc-end {
+  @include flex(end);
+}
+// Both ends |-|-|
+.flex-jc-between {
+  @include flex(between);
+}
+// Elements Equivalent -|-|-|-
+.flex-jc-around {
+  @include flex(around);
+}
+// Spacing Equivalent -|-|-|-
+.flex-jc-evenly {
+  @include flex(evenly);
+}
+
+// ----- align-items -----
+// Upper Align ⁻⁻⁻ default
+.flex-ai-start {
+  @include flex(null, start);
+}
+// Centering ---
+.flex-ai-center {
+  @include flex(null, center);
+}
+// BottomAlign ___
+.flex-ai-end {
+  @include flex(null, end);
+}
+// Base Line -=-
+.flex-ai-baseline {
+  @include flex(null, baseline);
+}
+// Expand Height |||
+.flex-ai-stretch {
+  @include flex(null, stretch);
+}
+
+// ----- justify-content & align-items -----
+
+// Centering -|||- & Upper Align ⁻⁻⁻
+.flex-center-start {
+  @include flex(center, start);
+}
+// Centering -|||- & Centering ---
+.flex-center-center {
+  @include flex(center, center);
+}
+// Centering -|||- & BottomAlign ___
+.flex-center-end {
+  @include flex(center, end);
+}
+// Align right ---||| & Upper Align ⁻⁻⁻ default
+.flex-end-start {
+  @include flex(end, start);
+}
+// Align right ---||| & Centering ---
+.flex-end-center {
+  @include flex(end, center);
+}
+// Align right ---||| & BottomAlign ___
+.flex-end-end {
+  @include flex(end, end);
+}
+
+// ----- flex-direction -----
+// Vertical Column |||
+.flex-d-column {
+  @include flex(null, null, column);
+}
+// Horizontal Column === default
+.flex-d-row {
+  @include flex(null, null, row);
+}
+// ToUp ↑↑↑
+.flex-d-reverse {
+  @include flex(null, null, reverse);
+}
+
+// ----- justify-content & flex-direction -----
+.flex-d-start-column {
+  @include flex(null, start, column);
+}
+.flex-d-center-column {
+  @include flex(null, center, column);
+}
+.flex-d-end-column {
+  @include flex(null, end, column);
+}
+
+// ----- flex-wrap -----
+.flex-w-wrap {
+  @include flex(null, null, null, wrap);
+}
+.flex-w-reverse {
+  @include flex(null, null, null, reverse);
+}
+
+// ----- flex-direction & flex-wrap -----
+.flex-d-column-wrap {
+  @include flex(null, null, column, wrap);
+}
+.flex-d-reverse-reverse {
+  @include flex(null, null, reverse, reverse);
+}
+
+// Width
+.width-100 {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.min-width-fit {
+  min-width: fit-content;
+}
